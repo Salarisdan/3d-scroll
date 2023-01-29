@@ -1,12 +1,3 @@
-import imagesApiService from './js/fetchimages';
-import LoadMoreButton from './js/load-more-btn';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-
-
-
-
 // 3D Scroll
 
 let zSpacing = -1000,
@@ -35,21 +26,20 @@ window.onscroll = function() {
 
 window.scrollTo(0, 1)
 
+// Audio
 
-//audio player
 let soundButton = document.querySelector('.soundbutton'),
-audio = document.querySelector('.audio')
+		audio = document.querySelector('.audio')
 
 soundButton.addEventListener('click', e => {
 	soundButton.classList.toggle('paused')
 	audio.paused ? audio.play() : audio.pause()
 })
 
-
 window.onfocus = function() {
-	soundButton.classList.contains('paused') ?  audio.pause() : audio.play() 
+	soundButton.classList.contains('paused') ? audio.pause() : audio.play()
 }
 
 window.onblur = function() {
-	audio.pause()	
+	audio.pause()
 }
